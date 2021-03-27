@@ -18,10 +18,10 @@
                                 <i class="fas fa-users"></i>Student</a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
-                                        <a href="">Add Student</a>
+                                        <a href="<?php echo  site_url() ?>Student">Add Student</a>
                                     </li>
                                     <li>
-                                        <a href="">View Student</a>
+                                        <a href="<?php echo  site_url() ?>Student/view">View Student</a>
                                     </li>
                                 </ul>
                         </li>

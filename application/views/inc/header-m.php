@@ -4,7 +4,7 @@
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
                             <!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> -->
-                            student data
+                            Student Data
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                                 <span class="hamburger-box">
