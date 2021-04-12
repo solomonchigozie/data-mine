@@ -9,7 +9,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="">
+                            <a href="<?php echo  site_url() ?>Home">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         
@@ -30,21 +30,21 @@
                                 <i class="fas fa-desktop"></i>Results</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="">Add Results</a>
+                                    <a href="<?php echo  site_url() ?>Result">Add Results</a>
                                 </li>
                                 <li>
-                                    <a href="">View Results</a>
+                                    <a href="<?php echo  site_url() ?>Result/view">View Results</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="">
+                            <a href="<?php echo site_url() ?>Analysis">
                                 <i class="fas fa-list-alt"></i>Result Analysis</a>
                         </li>
 
                         <li>
-                            <a href="">
+                            <a href="<?php echo site_url() ?>Home/logout">
                                 <i class="fas fa-power-off"></i>Logout</a>
                         </li>
                     </ul>

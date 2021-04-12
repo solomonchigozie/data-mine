@@ -10,7 +10,7 @@ if(!isset($_SESSION['email'])){
 
     <?php $this->load->view('inc/header') ?>
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Add Result</title>
 
 </head>
 
@@ -42,7 +42,7 @@ if(!isset($_SESSION['email'])){
                         <div class="col-md-7" style="margin:0 auto !important;">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>STUDENT DETAILS ENTRY</strong>
+                                        <strong>STUDENT RESULT ENTRY</strong>
                                     </div>
                                     <div class="card-body card-block">
                                         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" id="form">
@@ -53,14 +53,6 @@ if(!isset($_SESSION['email'])){
                                                 </div>
                                                 <div class="col-12 col-md-7">
                                                     <input type="text" id="matric" name="matric" placeholder="Enter Mat.No" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-5">
-                                                    <label for="name" class=" form-control-label">STUDENT NAME</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="text" id="name" name="name" placeholder="Enter Student Name" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -80,27 +72,15 @@ if(!isset($_SESSION['email'])){
                                                     <label for="department" class=" form-control-label">DEPARTMENT/COURSE</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="text" id="department" name="department" placeholder="Enter Student Department" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-5">
-                                                    <label for="gender" class=" form-control-label">GENDER</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <select name="gender" id="gender" class="form-control" required>
+                                                    <!-- <input type="text" id="department" name="department" placeholder="Enter Student Department" class="form-control" required> -->
+                                                    <select name="department" id="department" class="form-control" required>
                                                         <option value="">Please select</option>
-                                                        <option value="male">Male</option>
-                                                        <option value="female">Female</option>
+                                                        <option value="Computer Science">Computer Science</option>
+                                                        <option value="Mathematics">Mathematics</option>
+                                                        <option value="Statistics">Statistics</option>
+                                                        <option value="Physics">Physics</option>
+                                                        <option value="Chemistry">Chemistry</option>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-5">
-                                                    <label for="year" class=" form-control-label">YEAR OF ENTRY</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="number" id="entry_year" name="entry_year" placeholder="Enter Student Year Of Entry" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -120,7 +100,7 @@ if(!isset($_SESSION['email'])){
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-5">
-                                                    <label for="gender" class=" form-control-label">COURSE MODE</label>
+                                                    <label for="course_mode" class=" form-control-label">COURSE MODE</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
                                                     <select name="course_mode" id="course_mode" class="form-control" required>
@@ -131,15 +111,36 @@ if(!isset($_SESSION['email'])){
                                                 </div>
                                             </div>
 
-                                                <div class="form-group text-right">
-                                                    <button type="submit" class="btn btn-primary" id="submit">
-                                                        Add Student
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger" id="resetBtn">
-                                                        Reset
-                                                    </button>                                        
-                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-5">
+                                                    <label for="gender" class=" form-control-label">SEMESTER</label>
                                                 </div>
+                                                <div class="col-12 col-md-7">
+                                                    <select name="semester" id="semester" class="form-control" required>
+                                                        <option value="">Please select</option>
+                                                        <option value="first semester">First Semester</option>
+                                                        <option value="second semester">Second Semester</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-5">
+                                                    <label for="gp" class=" form-control-label">STUDENT GP</label>
+                                                </div>
+                                                <div class="col-12 col-md-7">
+                                                    <input type="text" id="gp" name="gp" placeholder="Enter Student GP" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group text-right">
+                                                <button type="submit" class="btn btn-primary" id="submit">
+                                                    Add Result
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="resetBtn">
+                                                    Reset
+                                                </button>                                        
+                                        
+                                            </div>
                                         </form>
                                     </div>
                                     
@@ -165,7 +166,7 @@ if(!isset($_SESSION['email'])){
                 e.preventDefault();
 
                 $.ajax({
-                    url : '<?php site_url() ?>Student/addstudent',
+                    url : '<?php site_url() ?>Result/addresult',
                     method : 'post',
                     data : new FormData(this),
                     cache : false,

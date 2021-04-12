@@ -10,7 +10,7 @@ if(!isset($_SESSION['email'])){
 
     <?php $this->load->view('inc/header') ?>
     <!-- Title Page-->
-    <title>View Student</title>
+    <title>View Results</title>
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/datatables/jquery.dataTables.min.css">
 <style>
 th, td{
@@ -43,7 +43,7 @@ th, td{
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">View Student</h2>
+                                    <h2 class="title-1">View Student Results</h2>
                                 </div>
                             </div>
                         </div>
@@ -52,31 +52,29 @@ th, td{
                             <thead>
                                 <tr>
                                     <th>Matric</th>
-                                    <th>Name</th>
                                     <th>Institution</th>
                                     <th>Department</th>
-                                    <th>Entry Year</th>
-                                    <th>Gender</th>
                                     <th>Level</th>
                                     <th>Course Mode</th>
+                                    <th>Semester</th>
+                                    <th>GP</th>
                                     <th>Date Added</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    $select = $this->db->query("SELECT * FROM student ORDER BY id DESC");
+                                    $select = $this->db->query("SELECT * FROM results ORDER BY id DESC");
 
                                     foreach($select->result() as $row){
                                 ?>
                                 <tr>
                                     <td><?php echo $row->matric_no ?></td>
-                                    <td><?php echo $row->names ?></td>
                                     <td><?php echo $row->institution ?></td>
                                     <td><?php echo $row->department ?></td>
-                                    <td><?php echo $row->entry_year ?></td>
-                                    <td><?php echo $row->sex ?></td>
                                     <td><?php echo $row->level ?></td>
                                     <td><?php echo $row->course_mode ?></td>
+                                    <td><?php echo $row->semester ?></td>
+                                    <td><?php echo $row->gp ?></td>
                                     <td><?php echo $row->date_added ?></td>
                                 </tr>
 

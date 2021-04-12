@@ -10,7 +10,7 @@ if(!isset($_SESSION['email'])){
 
     <?php $this->load->view('inc/header') ?>
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Home Page</title>
 
 </head>
 
@@ -42,7 +42,7 @@ if(!isset($_SESSION['email'])){
                             </div>
                         </div>
                         <div class="row m-t-25">
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="overview-item overview-item--c1">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -50,8 +50,11 @@ if(!isset($_SESSION['email'])){
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,368</h2>
-                                                <span>members</span>
+                                                <h2><?php
+                                                    $get = $this->db->get("student");
+                                                    echo $get->num_rows();
+                                                ?></h2>
+                                                <span>Students</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -60,16 +63,21 @@ if(!isset($_SESSION['email'])){
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>3,888</h2>
-                                                <span>items solid</span>
+                                                <h2>
+                                                <?php
+                                                    $get = $this->db->get("results");
+                                                    echo $get->num_rows();
+                                                ?>
+                                                </h2>
+                                                <span>Results Added</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -78,7 +86,7 @@ if(!isset($_SESSION['email'])){
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <!-- <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -113,7 +121,7 @@ if(!isset($_SESSION['email'])){
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
